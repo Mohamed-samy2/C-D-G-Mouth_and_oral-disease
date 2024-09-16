@@ -1,11 +1,11 @@
 # Hyperparameters
 num_classes = 3
 num_sites = 11
-embedding_dim = 128
+embedding_dim = 1920
 learning_rate = 0.001
 num_epochs = 40
 l2 = 0.01
-batch_size = 24
+batch_size = 32
 gamma = 0.75
 
 sche_milestones = [10, 20, 30, 40, 42, 43, 44, 45, 46, 47, 48, 49]
@@ -29,8 +29,8 @@ epochs_sch = {0:0, 9:1, 14:2, 19:3, 24:4, 29:5}
 test_size = 0.15
 val_size = 0.15
 
-full_dataset = "/home/waleed/Documents/Medical/data_DRP/LatestDataset_processed_299"
+full_dataset = "/mnt/c/Users/Dell/Desktop/Racing team/CDG Mouth and oral disease/Data/SplittedDataset"
 
-full_train_data_path = "/home/waleed/Documents/Medical/data_DRP/SplittedDataset/train"
-full_val_data_path = "/home/waleed/Documents/Medical/data_DRP/SplittedDataset/validation"
-full_test_data_path = "/home/waleed/Documents/Medical/data_DRP/SplittedDataset/test"
+full_train_data_path = "/mnt/c/Users/Dell/Desktop/Racing team/CDG Mouth and oral disease/Data/SplittedDataset/train"
+full_val_data_path = "/mnt/c/Users/Dell/Desktop/Racing team/CDG Mouth and oral disease/Data/SplittedDataset/validation"
+full_test_data_path = "/mnt/c/Users/Dell/Desktop/Racing team/CDG Mouth and oral disease/Data/SplittedDataset/test"

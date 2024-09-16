@@ -7,8 +7,9 @@ from torchvision import transforms
 from transformations import CustomRandomHorizontalFlip, CustomRandomVerticalFlip
 
 from Dataset import CustomDataset, load_data
-from MSmodel import Model
+from AsModel import ImageTransformer 
 from train import train
+from dataclasses import dataclass
 from base_model import device
 from config import imagenet_mean, imagenet_std, batch_size, num_classes, num_epochs, num_sites, learning_rate, sche_milestones, gamma, l2, embedding_dim
 from config import full_train_data_path, full_val_data_path, full_test_data_path
@@ -16,6 +17,7 @@ from config import full_train_data_path, full_val_data_path, full_test_data_path
 from helpful.vis_metrics import plots, DoAna
 
 import argparse
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Model training parameters")
@@ -25,18 +27,22 @@ def parse_args():
     parser.add_argument('--num_sites', type=int, default=num_sites, help="Number of sites")
     parser.add_argument('--embedding_dim', type=int, default=embedding_dim, help="Embedding dimension")
     parser.add_argument('--learning_rate', type=float, default=learning_rate, help="Learning rate")
-    parser.add_argument('--shape', type=int, default=299, help="Learning rate")
+    parser.add_argument('--shape', type=int, default=256, help="Learning rate")
+    parser.add_argument('--n_heads', type=int, default=8, help="n_heads")
+    parser.add_argument('--feedforward', type=int, default=512, help="feedforward")
+    parser.add_argument('--dropout', type=int, default=0.1, help="dropout")
+    parser.add_argument('--n_layers', type=int, default=8, help="n_layers")
 
     parser.add_argument('--num_epochs', type=int, default=num_epochs, help="Number of epochs")
     parser.add_argument('--l2', type=float, default=l2, help="L2 regularization")
     parser.add_argument('--batch_size', type=int, default=batch_size, help="Batch size")
     parser.add_argument('--gamma', type=float, default=gamma, help="Gamma")
-    parser.add_argument('--optim', type=str, default="Adam", help="Optimizor")
+    parser.add_argument('--optim', type=str, default="AdamW", help="Optimizer")
 
     parser.add_argument('--full_train_data_path', type=str, default=full_train_data_path, help="Full train data path")
     parser.add_argument('--full_val_data_path', type=str, default=full_val_data_path, help="Full validation data path")
     parser.add_argument('--full_test_data_path', type=str, default=full_test_data_path, help="Full test data path")
-    parser.add_argument('--base', type=str, default=None, help="Base model")
+    parser.add_argument('--base', type=str, default='densenet', help="Base model")
 
     # Boolean flags
     parser.add_argument('--ignore', action='store_true', help="Disable symmetries (default: True, use --ignore to set False)")
@@ -65,11 +71,12 @@ if args.transform:
 else:
     # Define the transformations based on the description provided
     transform = transforms.Compose([
-        transforms.RandomResizedCrop(size=args.shape, scale=(0.9, 1.0)),
-        transforms.RandomRotation(degrees=25),
+        # transforms.RandomResizedCrop(size=args.shape, scale=(0.9, 1.0)),
+        # transforms.RandomRotation(degrees=25),
         # CustomRandomHorizontalFlip(p=0.5),
         # CustomRandomVerticalFlip(p=0.5),
-        transforms.RandomAffine(degrees=0, translate=(0.1, 0.1), shear=0),
+        # transforms.RandomAffine(degrees=0, translate=(0.1, 0.1), shear=0),
+        transforms.Resize((args.shape, args.shape)),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
     ])
@@ -95,11 +102,19 @@ val_loader = DataLoader(val_set, batch_size=args.batch_size, shuffle=True, num_w
 test_loader = DataLoader(test_set, batch_size=args.batch_size, shuffle=False, num_workers = 4, pin_memory =True)
 
 torch.cuda.empty_cache()
-model = Model(num_classes=args.num_classes, num_sites=args.num_sites, base = args.base)
+model = ImageTransformer(num_classes=args.num_classes,
+                        num_sites=args.num_sites,
+                        embedding_dim=args.embedding_dim,
+                        nhead=args.n_heads,
+                        dim_feedforward=args.feedforward,
+                        dropout=args.dropout,
+                        n_layers=args.n_layers,
+                        base = args.base)
 model = nn.DataParallel(model).to(device)
+model = torch.compile(model)
 
 if args.optim == "AdamW":
-    optimizer = optim.AdamW(model.parameters(), lr=args.learning_rate, weight_decay=args.l2)
+    optimizer = optim.AdamW(model.parameters(), lr=args.learning_rate, weight_decay=args.l2,fused=True)
 else:
     optimizer = optim.Adam(model.parameters(), lr=args.learning_rate)
 

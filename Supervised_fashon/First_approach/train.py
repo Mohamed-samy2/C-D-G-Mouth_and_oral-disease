@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 
-def train(model, criterion, optimizer, scheduler, train_loader, test_loader, num_epochs, base = "inception", freeze = False):
+def train(model, criterion, optimizer, scheduler, train_loader, test_loader, num_epochs, base = "densenet", freeze = False):
 
     # Lists to store metrics
     train_accuracy = []
@@ -41,7 +41,6 @@ def train(model, criterion, optimizer, scheduler, train_loader, test_loader, num
 
         for images, labels, sites in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs}'):
             images, labels, sites = images.to(device), labels.to(device), sites.to(device)
-
             # Forward pass
             outputs = model(images, sites)
             loss = criterion(outputs, labels) # labels + 3 * sites
