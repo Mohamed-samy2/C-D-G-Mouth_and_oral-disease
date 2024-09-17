@@ -111,7 +111,7 @@ model = ImageTransformer(num_classes=args.num_classes,
                         n_layers=args.n_layers,
                         base = args.base)
 model = nn.DataParallel(model).to(device)
-model = torch.compile(model)
+# model = torch.compile(model)
 
 if args.optim == "AdamW":
     optimizer = optim.AdamW(model.parameters(), lr=args.learning_rate, weight_decay=args.l2,fused=True)
