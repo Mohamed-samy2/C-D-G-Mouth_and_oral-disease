@@ -1,0 +1,3 @@
+['buccal_mucosa_left', 'buccal_mucosa_right', 'dorsum_of_tongue', 'floor_of_mouth', 'gingiva', 'lateral_broder_of_tongue_left', 'lateral_broder_of_tongue_right', 'lower_labial_mucosa', 'palate', 'upper_labial_mucosa', 'ventral_of_tongue']
+trainable params: 148016195 || all params: 151955587 || trainable%: 97.40753724310248
+Training started.

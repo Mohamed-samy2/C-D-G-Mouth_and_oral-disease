@@ -1,4 +1,4 @@
-# Model Conditioned by the Site - First Approach
+<!-- # Model Conditioned by the Site - First Approach
 
 ## Overview
 
@@ -112,4 +112,4 @@ The repository is organized as follows:
 - Apply **joint embedding methods** (in progress).
 - Explore **regularization** and other advanced architectural techniques for further improvements.
 
----
+--- -->

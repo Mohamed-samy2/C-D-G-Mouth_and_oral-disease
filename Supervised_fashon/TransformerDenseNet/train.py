@@ -1,15 +1,14 @@
 import torch
 import numpy as np
 
-from helpful.helpful import print_trainable_parameters, setTrainable, FreezeFirstN
-from config import dic, epochs_sch
+from helpful.helpful import print_trainable_parameters, FreezeFirstN
 from base_model import device
 
 from tqdm import tqdm
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 
-def train(model, criterion, optimizer, scheduler, train_loader, test_loader, num_epochs, base = "densenet", freeze = False):
+def train(model, criterion, optimizer, scheduler, train_loader, test_loader, num_epochs, base = "densenet", freeze = False, to_freeze = 0):
 
     # Lists to store metrics
     train_accuracy = []
@@ -22,7 +21,7 @@ def train(model, criterion, optimizer, scheduler, train_loader, test_loader, num
     test_recall = []
     test_loss = []
     if freeze:
-        FreezeFirstN(model, 10000)
+        FreezeFirstN(model, to_freeze)
     print_trainable_parameters(model)
 
     print('Training started.')
@@ -32,11 +31,6 @@ def train(model, criterion, optimizer, scheduler, train_loader, test_loader, num
         all_labels = []
         all_preds = []
         cum_loss = 0
-
-        # set more parameters
-        if freeze and epoch in epochs_sch.keys():
-            setTrainable(model, dic[base][epochs_sch[epoch]])
-            print_trainable_parameters(model)
 
 
         for images, labels, sites in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs}'):
@@ -107,8 +101,8 @@ def train(model, criterion, optimizer, scheduler, train_loader, test_loader, num
 
         # torch.save(model.state_dict(), f"model_{base}_epoch_{epoch}.pth") # /home/waleed/Documents/Medical/results/
 
-        print(f'Epoch [{epoch + 1}/{num_epochs}], Loss: {cum_loss:.4f}, Accuracy: {epoch_accuracy:.4f}, Precision: {np.mean(epoch_precision):.4f}, Recall: {np.mean(epoch_recall):.4f}')
-        print(f'Epoch [{epoch + 1}/{num_epochs}], Loss: {t_loss:.4f}, Accuracy: {Tepoch_accuracy:.4f}, Precision: {np.mean(Tepoch_precision):.4f}, Recall: {np.mean(Tepoch_recall):.4f}')
+        print(f'Epoch [{epoch + 1}/{num_epochs}], Train Loss: {cum_loss:.4f}, Accuracy: {epoch_accuracy:.4f}, Precision: {np.mean(epoch_precision):.4f}, Recall: {np.mean(epoch_recall):.4f}')
+        print(f'Epoch [{epoch + 1}/{num_epochs}], Test Loss: {t_loss:.4f}, Accuracy: {Tepoch_accuracy:.4f}, Precision: {np.mean(Tepoch_precision):.4f}, Recall: {np.mean(Tepoch_recall):.4f}')
         print("----------------------------------------------------------------------------------------------")
     print('Training finished.')
     return train_accuracy, train_precision, train_recall, train_loss, test_accuracy, test_precision, test_recall, test_loss

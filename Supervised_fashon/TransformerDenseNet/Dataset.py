@@ -4,7 +4,6 @@ import numpy as np
 from PIL import Image
 from collections import Counter
 from torchvision import transforms
-from transformations import CustomRandomHorizontalFlip, CustomRandomVerticalFlip
 
 from sklearn.model_selection import train_test_split
 
@@ -59,16 +58,6 @@ class CustomDataset(Dataset):
         # Apply transforms
         if self.transform:
             image = self.transform(image)
-            if not self.ignore:
-                for t in self.transform.transforms:
-                    if isinstance(t, CustomRandomHorizontalFlip) and t.hflip and self.idx_to_site[site] in self.hdic.keys():
-                        newsite = self.hdic[self.idx_to_site[site]]
-                        site = self.idx_to_site.index(newsite)
-
-                    if isinstance(t, CustomRandomVerticalFlip) and t.vflip and self.idx_to_site[site] in self.vdic.keys():
-                        newsite = self.vdic[self.idx_to_site[site]]
-                        site = self.idx_to_site.index(newsite)
-
             if self.save_augmented:
                 self.save_image(image, idx, self.idx_to_class[label], self.idx_to_site[site])
 
