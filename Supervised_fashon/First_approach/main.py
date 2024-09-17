@@ -30,7 +30,7 @@ def parse_args():
     parser.add_argument('--shape', type=int, default=256, help="Learning rate")
     parser.add_argument('--n_heads', type=int, default=8, help="n_heads")
     parser.add_argument('--feedforward', type=int, default=512, help="feedforward")
-    parser.add_argument('--dropout', type=int, default=0.1, help="dropout")
+    parser.add_argument('--dropout', type=float, default=0.1, help="dropout")
     parser.add_argument('--n_layers', type=int, default=8, help="n_layers")
 
     parser.add_argument('--num_epochs', type=int, default=num_epochs, help="Number of epochs")

@@ -50,7 +50,7 @@ class ImageEncoder(nn.Module):
             return_nodes = {'classifier.dropout': 'features'}
             self.inc_base = create_feature_extractor(model, return_nodes)
 
-        elif self.base =='densenet':
+        elif self.base =='DenseNet':
             densenet = models.densenet201(pretrained=True)
             densenet.classifier = nn.Identity()
             self.inc_base = densenet 
