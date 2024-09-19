@@ -82,7 +82,9 @@ torch.cuda.empty_cache()
 
 model = ImageTransformer(num_classes=args.num_classes,
                         base= args.base,
-                        freeze_base=args.freeze_base)
+                        freeze_base=args.freeze_base,
+                        dropout=args.dropout
+                        )
 
 model = nn.DataParallel(model).to(device)
 
@@ -90,7 +92,7 @@ if args.compile:
     model = torch.compile(model=model) # use for training not debugging
 
 if args.optim == "AdamW":
-    optimizer = optim.AdamW(model.parameters(), lr=args.learning_rate, weight_decay=args.l2,betas=(0.9,0.95),eps=1e-8,fused=True)
+    optimizer = optim.AdamW(model.parameters(), lr=args.learning_rate, weight_decay=args.l2,fused=True)
     
 elif args.optim=='RMSprop':
     optimizer = optim.RMSprop(model.parameters(), lr=args.learning_rate,weight_decay=args.l2)
@@ -99,7 +101,7 @@ elif args.optim=='Adagrad':
     optimizer = optim.Adagrad(model.parameters(), lr=args.learning_rate,weight_decay=args.l2)
     
 else:
-    optimizer = optim.Adam(model.parameters(), lr=args.learning_rate ,  weight_decay=args.l2 , betas=(0.9,0.95),eps=1e-8)
+    optimizer = optim.Adam(model.parameters(), lr=args.learning_rate ,  weight_decay=args.l2 )
 
 scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones = sche_milestones, gamma = args.gamma)
 criterion = nn.CrossEntropyLoss()
