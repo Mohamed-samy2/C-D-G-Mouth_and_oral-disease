@@ -1,0 +1,426 @@
+['lateral_broder_of_tongue_left', 'ventral_of_tongue', 'buccal_mucosa_left', 'gingiva', 'floor_of_mouth', 'lateral_broder_of_tongue_right', 'buccal_mucosa_right', 'dorsum_of_tongue', 'lower_labial_mucosa', 'palate', 'upper_labial_mucosa']
+Used Device: cuda
+trainable params: 85037699 || all params: 85037699 || trainable%: 100.0
+Training started.
+Epoch [1/30], Train Loss: 1.3653, Train Accuracy: 0.5424,Train Precision: 0.5052, Train Recall: 0.5039
+Epoch [1/30], Validate Loss: 0.8215, Validate Accuracy: 0.7208, Validate Precision: 0.7133, Validate Recall: 0.6489
+----------------------------------------------------------------------------------------------
+Epoch [2/30], Train Loss: 0.8952, Train Accuracy: 0.7051,Train Precision: 0.6763, Train Recall: 0.6695
+Epoch [2/30], Validate Loss: 0.7016, Validate Accuracy: 0.7623, Validate Precision: 0.7698, Validate Recall: 0.7027
+----------------------------------------------------------------------------------------------
+Epoch [3/30], Train Loss: 0.6230, Train Accuracy: 0.7927,Train Precision: 0.7734, Train Recall: 0.7663
+Epoch [3/30], Validate Loss: 0.8229, Validate Accuracy: 0.7367, Validate Precision: 0.7211, Validate Recall: 0.7416
+----------------------------------------------------------------------------------------------
+Epoch [4/30], Train Loss: 0.4344, Train Accuracy: 0.8594,Train Precision: 0.8466, Train Recall: 0.8437
+Epoch [4/30], Validate Loss: 0.8172, Validate Accuracy: 0.7671, Validate Precision: 0.7520, Validate Recall: 0.7630
+----------------------------------------------------------------------------------------------
+Epoch [5/30], Train Loss: 0.2973, Train Accuracy: 0.9083,Train Precision: 0.9001, Train Recall: 0.8988
+Epoch [5/30], Validate Loss: 0.9831, Validate Accuracy: 0.7920, Validate Precision: 0.7916, Validate Recall: 0.7469
+----------------------------------------------------------------------------------------------
+Epoch [6/30], Train Loss: 0.2286, Train Accuracy: 0.9256,Train Precision: 0.9190, Train Recall: 0.9170
+Epoch [6/30], Validate Loss: 0.9709, Validate Accuracy: 0.7941, Validate Precision: 0.7878, Validate Recall: 0.7520
+----------------------------------------------------------------------------------------------
+Epoch [7/30], Train Loss: 0.1771, Train Accuracy: 0.9424,Train Precision: 0.9398, Train Recall: 0.9360
+Epoch [7/30], Validate Loss: 0.8890, Validate Accuracy: 0.8017, Validate Precision: 0.7791, Validate Recall: 0.7806
+----------------------------------------------------------------------------------------------
+Epoch [8/30], Train Loss: 0.1479, Train Accuracy: 0.9524,Train Precision: 0.9484, Train Recall: 0.9478
+Epoch [8/30], Validate Loss: 1.3382, Validate Accuracy: 0.7906, Validate Precision: 0.7927, Validate Recall: 0.7389
+----------------------------------------------------------------------------------------------
+Epoch [9/30], Train Loss: 0.1387, Train Accuracy: 0.9561,Train Precision: 0.9517, Train Recall: 0.9504
+Epoch [9/30], Validate Loss: 1.1118, Validate Accuracy: 0.7961, Validate Precision: 0.7748, Validate Recall: 0.7617
+----------------------------------------------------------------------------------------------
+Epoch [10/30], Train Loss: 0.1540, Train Accuracy: 0.9507,Train Precision: 0.9468, Train Recall: 0.9458
+Epoch [10/30], Validate Loss: 1.0372, Validate Accuracy: 0.7913, Validate Precision: 0.7740, Validate Recall: 0.7533
+----------------------------------------------------------------------------------------------
+Epoch [11/30], Train Loss: 0.1059, Train Accuracy: 0.9640,Train Precision: 0.9625, Train Recall: 0.9607
+Epoch [11/30], Validate Loss: 0.9572, Validate Accuracy: 0.8093, Validate Precision: 0.7929, Validate Recall: 0.7752
+----------------------------------------------------------------------------------------------
+Epoch [12/30], Train Loss: 0.0951, Train Accuracy: 0.9701,Train Precision: 0.9673, Train Recall: 0.9679
+Epoch [12/30], Validate Loss: 0.9262, Validate Accuracy: 0.8086, Validate Precision: 0.7909, Validate Recall: 0.7769
+----------------------------------------------------------------------------------------------
+Epoch [13/30], Train Loss: 0.0844, Train Accuracy: 0.9720,Train Precision: 0.9707, Train Recall: 0.9689
+Epoch [13/30], Validate Loss: 0.9423, Validate Accuracy: 0.8079, Validate Precision: 0.7861, Validate Recall: 0.7790
+----------------------------------------------------------------------------------------------
+Epoch [14/30], Train Loss: 0.0695, Train Accuracy: 0.9755,Train Precision: 0.9742, Train Recall: 0.9724
+Epoch [14/30], Validate Loss: 0.9235, Validate Accuracy: 0.8203, Validate Precision: 0.8062, Validate Recall: 0.7881
+----------------------------------------------------------------------------------------------
+Epoch [15/30], Train Loss: 0.0801, Train Accuracy: 0.9753,Train Precision: 0.9736, Train Recall: 0.9726
+Epoch [15/30], Validate Loss: 0.9110, Validate Accuracy: 0.8176, Validate Precision: 0.8064, Validate Recall: 0.7816
+----------------------------------------------------------------------------------------------
+Epoch [16/30], Train Loss: 0.0696, Train Accuracy: 0.9775,Train Precision: 0.9760, Train Recall: 0.9752
+Epoch [16/30], Validate Loss: 0.9310, Validate Accuracy: 0.8272, Validate Precision: 0.8177, Validate Recall: 0.7905
+----------------------------------------------------------------------------------------------
+Epoch [17/30], Train Loss: 0.0621, Train Accuracy: 0.9837,Train Precision: 0.9819, Train Recall: 0.9820
+Epoch [17/30], Validate Loss: 0.9166, Validate Accuracy: 0.8210, Validate Precision: 0.8044, Validate Recall: 0.7847
+----------------------------------------------------------------------------------------------
+Epoch [18/30], Train Loss: 0.0497, Train Accuracy: 0.9815,Train Precision: 0.9796, Train Recall: 0.9793
+Epoch [18/30], Validate Loss: 0.9300, Validate Accuracy: 0.8210, Validate Precision: 0.8082, Validate Recall: 0.7867
+----------------------------------------------------------------------------------------------
+Epoch [19/30], Train Loss: 0.0601, Train Accuracy: 0.9818,Train Precision: 0.9807, Train Recall: 0.9791
+Epoch [19/30], Validate Loss: 0.8956, Validate Accuracy: 0.8252, Validate Precision: 0.8078, Validate Recall: 0.7924
+----------------------------------------------------------------------------------------------
+Epoch [20/30], Train Loss: 0.0574, Train Accuracy: 0.9812,Train Precision: 0.9800, Train Recall: 0.9793
+Epoch [20/30], Validate Loss: 0.8878, Validate Accuracy: 0.8252, Validate Precision: 0.8072, Validate Recall: 0.7949
+----------------------------------------------------------------------------------------------
+Epoch [21/30], Train Loss: 0.0504, Train Accuracy: 0.9844,Train Precision: 0.9841, Train Recall: 0.9827
+Epoch [21/30], Validate Loss: 0.9200, Validate Accuracy: 0.8224, Validate Precision: 0.8054, Validate Recall: 0.7888
+----------------------------------------------------------------------------------------------
+Epoch [22/30], Train Loss: 0.0472, Train Accuracy: 0.9856,Train Precision: 0.9850, Train Recall: 0.9843
+Epoch [22/30], Validate Loss: 0.9120, Validate Accuracy: 0.8258, Validate Precision: 0.8090, Validate Recall: 0.7922
+----------------------------------------------------------------------------------------------
+Epoch [23/30], Train Loss: 0.0468, Train Accuracy: 0.9846,Train Precision: 0.9834, Train Recall: 0.9831
+Epoch [23/30], Validate Loss: 0.9190, Validate Accuracy: 0.8238, Validate Precision: 0.8135, Validate Recall: 0.7859
+----------------------------------------------------------------------------------------------
+Epoch [24/30], Train Loss: 0.0448, Train Accuracy: 0.9855,Train Precision: 0.9852, Train Recall: 0.9837
+Epoch [24/30], Validate Loss: 0.8933, Validate Accuracy: 0.8238, Validate Precision: 0.8148, Validate Recall: 0.7861
+----------------------------------------------------------------------------------------------
+Epoch [25/30], Train Loss: 0.0497, Train Accuracy: 0.9840,Train Precision: 0.9830, Train Recall: 0.9828
+Epoch [25/30], Validate Loss: 0.9021, Validate Accuracy: 0.8224, Validate Precision: 0.8060, Validate Recall: 0.7874
+----------------------------------------------------------------------------------------------
+Epoch [26/30], Train Loss: 0.0493, Train Accuracy: 0.9844,Train Precision: 0.9834, Train Recall: 0.9830
+Epoch [26/30], Validate Loss: 0.9035, Validate Accuracy: 0.8300, Validate Precision: 0.8132, Validate Recall: 0.7971
+----------------------------------------------------------------------------------------------
+Epoch [27/30], Train Loss: 0.0530, Train Accuracy: 0.9828,Train Precision: 0.9807, Train Recall: 0.9809
+Epoch [27/30], Validate Loss: 0.8956, Validate Accuracy: 0.8258, Validate Precision: 0.8119, Validate Recall: 0.7885
+----------------------------------------------------------------------------------------------
+Epoch [28/30], Train Loss: 0.0523, Train Accuracy: 0.9825,Train Precision: 0.9817, Train Recall: 0.9796
+Epoch [28/30], Validate Loss: 0.9193, Validate Accuracy: 0.8245, Validate Precision: 0.8146, Validate Recall: 0.7878
+----------------------------------------------------------------------------------------------
+Epoch [29/30], Train Loss: 0.0502, Train Accuracy: 0.9838,Train Precision: 0.9826, Train Recall: 0.9821
+Epoch [29/30], Validate Loss: 0.8929, Validate Accuracy: 0.8258, Validate Precision: 0.8103, Validate Recall: 0.7905
+----------------------------------------------------------------------------------------------
+Epoch [30/30], Train Loss: 0.0579, Train Accuracy: 0.9813,Train Precision: 0.9800, Train Recall: 0.9788
+Epoch [30/30], Validate Loss: 0.9184, Validate Accuracy: 0.8231, Validate Precision: 0.8127, Validate Recall: 0.7861
+----------------------------------------------------------------------------------------------
+Training finished.
+Site-Specific Model-Error Distribution:
+
+Site: lateral_broder_of_tongue_left
+  Predicted low: 82 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: ventral_of_tongue
+  Predicted low: 69 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: buccal_mucosa_left
+  Predicted low: 145 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: gingiva
+  Predicted low: 117 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: floor_of_mouth
+  Predicted low: 74 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: lateral_broder_of_tongue_right
+  Predicted low: 92 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: buccal_mucosa_right
+  Predicted low: 147 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: dorsum_of_tongue
+  Predicted low: 88 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: lower_labial_mucosa
+  Predicted low: 68 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: palate
+  Predicted low: 153 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: upper_labial_mucosa
+  Predicted low: 51 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Sites with Strong Prediction Biases:
+Site: lateral_broder_of_tongue_left has a strong bias towards predicting 'low' (100.00%)
+Site: ventral_of_tongue has a strong bias towards predicting 'low' (100.00%)
+Site: buccal_mucosa_left has a strong bias towards predicting 'low' (100.00%)
+Site: gingiva has a strong bias towards predicting 'low' (100.00%)
+Site: floor_of_mouth has a strong bias towards predicting 'low' (100.00%)
+Site: lateral_broder_of_tongue_right has a strong bias towards predicting 'low' (100.00%)
+Site: buccal_mucosa_right has a strong bias towards predicting 'low' (100.00%)
+Site: dorsum_of_tongue has a strong bias towards predicting 'low' (100.00%)
+Site: lower_labial_mucosa has a strong bias towards predicting 'low' (100.00%)
+Site: palate has a strong bias towards predicting 'low' (100.00%)
+Site: upper_labial_mucosa has a strong bias towards predicting 'low' (100.00%)
+Confusion Matrix Analysis with Error Contribution:
+
+Site: lateral_broder_of_tongue_left
+  True Label 'low' classified as 'normal': 0 times (0.00% of site errors)
+  True Label 'low' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'normal' classified as 'low': 53 times (64.63% of site errors)
+  True Label 'normal' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'high' classified as 'low': 29 times (35.37% of site errors)
+  True Label 'high' classified as 'normal': 0 times (0.00% of site errors)
+
+Site: ventral_of_tongue
+  True Label 'low' classified as 'normal': 0 times (0.00% of site errors)
+  True Label 'low' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'normal' classified as 'low': 55 times (79.71% of site errors)
+  True Label 'normal' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'high' classified as 'low': 14 times (20.29% of site errors)
+  True Label 'high' classified as 'normal': 0 times (0.00% of site errors)
+
+Site: buccal_mucosa_left
+  True Label 'low' classified as 'normal': 0 times (0.00% of site errors)
+  True Label 'low' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'normal' classified as 'low': 57 times (39.31% of site errors)
+  True Label 'normal' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'high' classified as 'low': 88 times (60.69% of site errors)
+  True Label 'high' classified as 'normal': 0 times (0.00% of site errors)
+
+Site: gingiva
+  True Label 'low' classified as 'normal': 0 times (0.00% of site errors)
+  True Label 'low' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'normal' classified as 'low': 99 times (84.62% of site errors)
+  True Label 'normal' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'high' classified as 'low': 18 times (15.38% of site errors)
+  True Label 'high' classified as 'normal': 0 times (0.00% of site errors)
+
+Site: floor_of_mouth
+  True Label 'low' classified as 'normal': 0 times (0.00% of site errors)
+  True Label 'low' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'normal' classified as 'low': 65 times (87.84% of site errors)
+  True Label 'normal' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'high' classified as 'low': 9 times (12.16% of site errors)
+  True Label 'high' classified as 'normal': 0 times (0.00% of site errors)
+
+Site: lateral_broder_of_tongue_right
+  True Label 'low' classified as 'normal': 0 times (0.00% of site errors)
+  True Label 'low' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'normal' classified as 'low': 52 times (56.52% of site errors)
+  True Label 'normal' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'high' classified as 'low': 40 times (43.48% of site errors)
+  True Label 'high' classified as 'normal': 0 times (0.00% of site errors)
+
+Site: buccal_mucosa_right
+  True Label 'low' classified as 'normal': 0 times (0.00% of site errors)
+  True Label 'low' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'normal' classified as 'low': 61 times (41.50% of site errors)
+  True Label 'normal' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'high' classified as 'low': 86 times (58.50% of site errors)
+  True Label 'high' classified as 'normal': 0 times (0.00% of site errors)
+
+Site: dorsum_of_tongue
+  True Label 'low' classified as 'normal': 0 times (0.00% of site errors)
+  True Label 'low' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'normal' classified as 'low': 58 times (65.91% of site errors)
+  True Label 'normal' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'high' classified as 'low': 30 times (34.09% of site errors)
+  True Label 'high' classified as 'normal': 0 times (0.00% of site errors)
+
+Site: lower_labial_mucosa
+  True Label 'low' classified as 'normal': 0 times (0.00% of site errors)
+  True Label 'low' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'normal' classified as 'low': 55 times (80.88% of site errors)
+  True Label 'normal' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'high' classified as 'low': 13 times (19.12% of site errors)
+  True Label 'high' classified as 'normal': 0 times (0.00% of site errors)
+
+Site: palate
+  True Label 'low' classified as 'normal': 0 times (0.00% of site errors)
+  True Label 'low' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'normal' classified as 'low': 102 times (66.67% of site errors)
+  True Label 'normal' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'high' classified as 'low': 51 times (33.33% of site errors)
+  True Label 'high' classified as 'normal': 0 times (0.00% of site errors)
+
+Site: upper_labial_mucosa
+  True Label 'low' classified as 'normal': 0 times (0.00% of site errors)
+  True Label 'low' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'normal' classified as 'low': 46 times (90.20% of site errors)
+  True Label 'normal' classified as 'high': 0 times (0.00% of site errors)
+  True Label 'high' classified as 'low': 5 times (9.80% of site errors)
+  True Label 'high' classified as 'normal': 0 times (0.00% of site errors)
+Site-Specific Model-Predictions Distribution:
+
+Site: lateral_broder_of_tongue_left
+  Predicted low: 99 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: ventral_of_tongue
+  Predicted low: 87 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: buccal_mucosa_left
+  Predicted low: 176 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: gingiva
+  Predicted low: 219 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: floor_of_mouth
+  Predicted low: 100 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: lateral_broder_of_tongue_right
+  Predicted low: 108 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: buccal_mucosa_right
+  Predicted low: 176 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: dorsum_of_tongue
+  Predicted low: 116 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: lower_labial_mucosa
+  Predicted low: 105 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: palate
+  Predicted low: 196 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Site: upper_labial_mucosa
+  Predicted low: 65 times (100.00%)
+  Predicted normal: 0 times (0.00%)
+  Predicted high: 0 times (0.00%)
+
+Sites with Strong Prediction Biases:
+Site: lateral_broder_of_tongue_left has a strong bias towards predicting 'low' (100.00%)
+Site: ventral_of_tongue has a strong bias towards predicting 'low' (100.00%)
+Site: buccal_mucosa_left has a strong bias towards predicting 'low' (100.00%)
+Site: gingiva has a strong bias towards predicting 'low' (100.00%)
+Site: floor_of_mouth has a strong bias towards predicting 'low' (100.00%)
+Site: lateral_broder_of_tongue_right has a strong bias towards predicting 'low' (100.00%)
+Site: buccal_mucosa_right has a strong bias towards predicting 'low' (100.00%)
+Site: dorsum_of_tongue has a strong bias towards predicting 'low' (100.00%)
+Site: lower_labial_mucosa has a strong bias towards predicting 'low' (100.00%)
+Site: palate has a strong bias towards predicting 'low' (100.00%)
+Site: upper_labial_mucosa has a strong bias towards predicting 'low' (100.00%)
+Site-Specific Accuracy for Each Label:
+
+Site: lateral_broder_of_tongue_left
+  Label 'low': 17/17 correct (100.00% accuracy)
+  Label 'normal': 0/53 correct (0.00% accuracy)
+  Label 'high': 0/29 correct (0.00% accuracy)
+
+Site: ventral_of_tongue
+  Label 'low': 18/18 correct (100.00% accuracy)
+  Label 'normal': 0/55 correct (0.00% accuracy)
+  Label 'high': 0/14 correct (0.00% accuracy)
+
+Site: buccal_mucosa_left
+  Label 'low': 31/31 correct (100.00% accuracy)
+  Label 'normal': 0/57 correct (0.00% accuracy)
+  Label 'high': 0/88 correct (0.00% accuracy)
+
+Site: gingiva
+  Label 'low': 102/102 correct (100.00% accuracy)
+  Label 'normal': 0/99 correct (0.00% accuracy)
+  Label 'high': 0/18 correct (0.00% accuracy)
+
+Site: floor_of_mouth
+  Label 'low': 26/26 correct (100.00% accuracy)
+  Label 'normal': 0/65 correct (0.00% accuracy)
+  Label 'high': 0/9 correct (0.00% accuracy)
+
+Site: lateral_broder_of_tongue_right
+  Label 'low': 16/16 correct (100.00% accuracy)
+  Label 'normal': 0/52 correct (0.00% accuracy)
+  Label 'high': 0/40 correct (0.00% accuracy)
+
+Site: buccal_mucosa_right
+  Label 'low': 29/29 correct (100.00% accuracy)
+  Label 'normal': 0/61 correct (0.00% accuracy)
+  Label 'high': 0/86 correct (0.00% accuracy)
+
+Site: dorsum_of_tongue
+  Label 'low': 28/28 correct (100.00% accuracy)
+  Label 'normal': 0/58 correct (0.00% accuracy)
+  Label 'high': 0/30 correct (0.00% accuracy)
+
+Site: lower_labial_mucosa
+  Label 'low': 37/37 correct (100.00% accuracy)
+  Label 'normal': 0/55 correct (0.00% accuracy)
+  Label 'high': 0/13 correct (0.00% accuracy)
+
+Site: palate
+  Label 'low': 43/43 correct (100.00% accuracy)
+  Label 'normal': 0/102 correct (0.00% accuracy)
+  Label 'high': 0/51 correct (0.00% accuracy)
+
+Site: upper_labial_mucosa
+  Label 'low': 14/14 correct (100.00% accuracy)
+  Label 'normal': 0/46 correct (0.00% accuracy)
+  Label 'high': 0/5 correct (0.00% accuracy)
+Classification Report:
+              precision    recall  f1-score   support
+
+         low       0.25      1.00      0.40       361
+      normal       0.00      0.00      0.00       703
+        high       0.00      0.00      0.00       383
+
+    accuracy                           0.25      1447
+   macro avg       0.08      0.33      0.13      1447
+weighted avg       0.06      0.25      0.10      1447
+
+
+Site-specific Misclassification Counts:
+lateral_broder_of_tongue_left: 82
+ventral_of_tongue: 69
+buccal_mucosa_left: 145
+gingiva: 117
+floor_of_mouth: 74
+lateral_broder_of_tongue_right: 92
+buccal_mucosa_right: 147
+dorsum_of_tongue: 88
+lower_labial_mucosa: 68
+palate: 153
+upper_labial_mucosa: 51
+
+Misclassified Examples:
+Sample Index 0: True Label = normal, Predicted Label = low (Count: 53)
+Sample Index 1: True Label = normal, Predicted Label = low (Count: 55)
+Sample Index 2: True Label = normal, Predicted Label = low (Count: 57)
+Sample Index 3: True Label = normal, Predicted Label = low (Count: 99)
+Sample Index 4: True Label = normal, Predicted Label = low (Count: 65)
+Sample Index 5: True Label = normal, Predicted Label = low (Count: 52)
+Sample Index 6: True Label = normal, Predicted Label = low (Count: 61)
+Sample Index 7: True Label = normal, Predicted Label = low (Count: 58)
+Sample Index 8: True Label = normal, Predicted Label = low (Count: 55)
+Sample Index 9: True Label = normal, Predicted Label = low (Count: 102)
+Sample Index 10: True Label = normal, Predicted Label = low (Count: 46)
+Sample Index 0: True Label = high, Predicted Label = low (Count: 29)
+Sample Index 1: True Label = high, Predicted Label = low (Count: 14)
+Sample Index 2: True Label = high, Predicted Label = low (Count: 88)
+Sample Index 3: True Label = high, Predicted Label = low (Count: 18)
+Sample Index 4: True Label = high, Predicted Label = low (Count: 9)
+Sample Index 5: True Label = high, Predicted Label = low (Count: 40)
+Sample Index 6: True Label = high, Predicted Label = low (Count: 86)
+Sample Index 7: True Label = high, Predicted Label = low (Count: 30)
+Sample Index 8: True Label = high, Predicted Label = low (Count: 13)
+Sample Index 9: True Label = high, Predicted Label = low (Count: 51)
+Sample Index 10: True Label = high, Predicted Label = low (Count: 5)

@@ -23,15 +23,9 @@ def parse_args():
 
     # Add arguments for each hyperparameter
     parser.add_argument('--num_classes', type=int, default=num_classes, help="Number of classes")
-    parser.add_argument('--num_sites', type=int, default=num_sites, help="Number of sites")
-    parser.add_argument('--embedding_dim', type=int, default=embedding_dim, help="Embedding dimension")
     parser.add_argument('--learning_rate', type=float, default=learning_rate, help="Learning rate")
-    parser.add_argument('--shape', type=int, default=256, help="Learning rate")
-    parser.add_argument('--n_heads', type=int, default=8, help="n_heads")
-    parser.add_argument('--feedforward', type=int, default=512, help="feedforward")
-    parser.add_argument('--dropout', type=float, default=0.1, help="dropout")
-    parser.add_argument('--n_layers', type=int, default=8, help="n_layers")
-
+    parser.add_argument('--shape', type=int, default=224, help="Learning rate")
+    
     parser.add_argument('--num_epochs', type=int, default=num_epochs, help="Number of epochs")
     parser.add_argument('--l2', type=float, default=l2, help="L2 regularization")
     parser.add_argument('--batch_size', type=int, default=batch_size, help="Batch size")
@@ -82,15 +76,7 @@ test_loader = DataLoader(test_set, batch_size=args.batch_size, shuffle=False, nu
 
 torch.cuda.empty_cache()
 
-model = ImageTransformer(num_classes=args.num_classes,
-                        num_sites=args.num_sites,
-                        embedding_dim=args.embedding_dim,
-                        nhead=args.n_heads,
-                        dim_feedforward=args.feedforward,
-                        dropout=args.dropout,
-                        n_layers=args.n_layers,
-                        base = args.base
-                        )
+model = ImageTransformer(num_classes=args.num_classes)
 
 model = nn.DataParallel(model).to(device)
 
