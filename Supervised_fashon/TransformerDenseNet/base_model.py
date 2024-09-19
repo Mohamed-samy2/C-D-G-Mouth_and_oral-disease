@@ -1,7 +1,6 @@
 import torch
 from torch import nn
-# import timm
-import torchvision.models as models
+import timm
 from torchvision.models.feature_extraction import create_feature_extractor
 # from transformers import ViTModel
 
@@ -15,10 +14,9 @@ class ImageEncoder(nn.Module):
         self.relu = nn.ReLU()
 
         if self.base == 'inception':
-            return
-            # inception_resnet_v2 = timm.create_model('inception_resnet_v2', pretrained=True)
-            # self.inc_base = nn.Sequential(*list(inception_resnet_v2.children())[:-1])
-            # self.set_dropout(self.inc_base, p=0.25)
+            inception_resnet_v2 = timm.create_model('inception_resnet_v2', pretrained=True)
+            self.inc_base = nn.Sequential(*list(inception_resnet_v2.children())[:-1])
+            self.set_dropout(self.inc_base, p=0.25)
 
         elif self.base == "ViT":
             # self.inc_base = ViTModel.from_pretrained('google/vit-base-patch16-224-in21k',
@@ -28,22 +26,20 @@ class ImageEncoder(nn.Module):
             return
 
         elif self.base == "effnet_b4":
-            # model = timm.create_model('tf_efficientnet_b4', pretrained=True)
-            # self.inc_base = nn.Sequential(*list(model.children())[:-1])
-            # self.set_dropout(self.inc_base, p=0.25)
-            return
+            model = timm.create_model('tf_efficientnet_b4', pretrained=True)
+            self.inc_base = nn.Sequential(*list(model.children())[:-1])
+            self.set_dropout(self.inc_base, p=0.25)
 
         elif self.base == "resnet50":
-            # resnet50 = timm.create_model('resnet50', pretrained=True)
-            # self.inc_base = nn.Sequential(*list(resnet50.children())[:-1])
-            # self.set_dropout(self.inc_base, p=0.25)
-            return
+            resnet50 = timm.create_model('resnet50', pretrained=True)
+            self.inc_base = nn.Sequential(*list(resnet50.children())[:-1])
+            self.set_dropout(self.inc_base, p=0.25)
+        
 
         elif self.base == "convnext":
-            # convnext_base = timm.create_model('convnext_base', pretrained=True)
-            # self.inc_base = nn.Sequential(*list(convnext_base.children())[:-1])
-            # self.set_dropout(self.inc_base, p=0.25)
-            return
+            convnext_base = timm.create_model('convnext_base', pretrained=True)
+            self.inc_base = nn.Sequential(*list(convnext_base.children())[:-1])
+            self.set_dropout(self.inc_base, p=0.25)
 
         elif self.base == "google":
             model = torch.hub.load('NVIDIA/DeepLearningExamples:torchhub', 'nvidia_efficientnet_b4', pretrained=True)
@@ -51,9 +47,8 @@ class ImageEncoder(nn.Module):
             self.inc_base = create_feature_extractor(model, return_nodes)
 
         elif self.base =='densenet':
-            densenet = models.densenet201(pretrained=True)
-            densenet.classifier = nn.Identity()
-            self.inc_base = densenet 
+            densenet = timm.create_model('densenet201', pretrained=True)
+            self.inc_base = nn.Sequential(*list(densenet.children())[:-1])
         
         else:
             self.conv1 = nn.Conv2d(3, 64, kernel_size=3, padding=1)

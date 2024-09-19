@@ -101,8 +101,8 @@ def train(model, criterion, optimizer, scheduler, train_loader, test_loader, num
 
         # torch.save(model.state_dict(), f"model_{base}_epoch_{epoch}.pth") # /home/waleed/Documents/Medical/results/
 
-        print(f'Epoch [{epoch + 1}/{num_epochs}], Train Loss: {cum_loss:.4f}, Accuracy: {epoch_accuracy:.4f}, Precision: {np.mean(epoch_precision):.4f}, Recall: {np.mean(epoch_recall):.4f}')
-        print(f'Epoch [{epoch + 1}/{num_epochs}], Test Loss: {t_loss:.4f}, Accuracy: {Tepoch_accuracy:.4f}, Precision: {np.mean(Tepoch_precision):.4f}, Recall: {np.mean(Tepoch_recall):.4f}')
+        print(f'Epoch [{epoch + 1}/{num_epochs}], Train Loss: {cum_loss:.4f}, Train Accuracy: {epoch_accuracy:.4f},Train Precision: {np.mean(epoch_precision):.4f}, Train Recall: {np.mean(epoch_recall):.4f}')
+        print(f'Epoch [{epoch + 1}/{num_epochs}], Validate Loss: {t_loss:.4f}, Validate Accuracy: {Tepoch_accuracy:.4f}, Validate Precision: {np.mean(Tepoch_precision):.4f}, Validate Recall: {np.mean(Tepoch_recall):.4f}')
         print("----------------------------------------------------------------------------------------------")
     print('Training finished.')
     return train_accuracy, train_precision, train_recall, train_loss, test_accuracy, test_precision, test_recall, test_loss

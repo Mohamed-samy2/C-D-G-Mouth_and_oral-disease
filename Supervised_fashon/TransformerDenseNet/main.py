@@ -70,6 +70,8 @@ stra_test_data, _, _ = load_data(args.full_test_data_path, False)
 stra_val_data, _, _ = load_data(args.full_val_data_path, False)
 print(idx_to_site)
 
+print(f"Used Device: {device}"  )
+
 train_set = CustomDataset(stra_train_data, transform, "train_distribution", oversample =False, idx_to_class=idx_to_class, idx_to_site=idx_to_site, save_augmented=False, ignore=False)
 val_set = CustomDataset(stra_test_data, transform, "val_distribution", oversample = False, idx_to_class=idx_to_class, idx_to_site=idx_to_site, save_augmented=False, ignore=False)
 test_set = CustomDataset(stra_test_data, test_transform, title = "test_distribution", oversample=False, ignore=False)
@@ -87,7 +89,8 @@ model = ImageTransformer(num_classes=args.num_classes,
                         dim_feedforward=args.feedforward,
                         dropout=args.dropout,
                         n_layers=args.n_layers,
-                        base = args.base)
+                        base = args.base
+                        )
 
 model = nn.DataParallel(model).to(device)
 
@@ -96,6 +99,13 @@ if args.compile:
 
 if args.optim == "AdamW":
     optimizer = optim.AdamW(model.parameters(), lr=args.learning_rate, weight_decay=args.l2,fused=True)
+    
+elif args.optim=='RMSprop':
+    optimizer = optim.RMSprop(model.parameters(), lr=args.learning_rate,weight_decay=args.l2)
+    
+elif args.optim=='Adagrad':
+    optimizer = optim.Adagrad(model.parameters(), lr=args.learning_rate,weight_decay=args.l2)
+    
 else:
     optimizer = optim.Adam(model.parameters(), lr=args.learning_rate)
 
