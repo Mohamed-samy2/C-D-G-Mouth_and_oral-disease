@@ -36,7 +36,7 @@ def train(model, criterion, optimizer, scheduler, train_loader, test_loader, num
         for images, labels, sites in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs}'):
             images, labels, sites = images.to(device), labels.to(device), sites.to(device)
             # Forward pass
-            outputs = model(images, sites)
+            outputs = model(images)
             loss = criterion(outputs, labels) # labels + 3 * sites
 
             # Zero the parameter gradients
@@ -77,7 +77,7 @@ def train(model, criterion, optimizer, scheduler, train_loader, test_loader, num
                 images, labels, sites = images.to(device), labels.to(device), sites.to(device)
 
                 # Forward pass
-                outputs = model(images, sites )
+                outputs = model(images )
                 t_loss += criterion(outputs, labels).item() # labels  + 3 * sites
 
                 # Get predictions and true labels
