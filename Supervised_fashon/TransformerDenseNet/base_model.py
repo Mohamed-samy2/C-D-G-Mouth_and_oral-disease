@@ -8,7 +8,7 @@ cuda = True if torch.cuda.is_available() else False
 device = 'cuda' if cuda else 'cpu'
 
 class ImageEncoder(nn.Module):
-    def __init__(self, base=None, id2label=None, label2id=None):
+    def __init__(self, base=None, id2label=None, label2id=None , freeze_base = False, dropout = 0.1):
         super(ImageEncoder, self).__init__()
         self.base = base
         self.relu = nn.ReLU()
@@ -16,7 +16,9 @@ class ImageEncoder(nn.Module):
         if self.base == 'inception':
             inception_resnet_v2 = timm.create_model('inception_resnet_v2', pretrained=True)
             self.inc_base = nn.Sequential(*list(inception_resnet_v2.children())[:-1])
-            self.set_dropout(self.inc_base, p=0.25)
+            if freeze_base:
+                self.freeze_base()
+            self.set_dropout(self.inc_base, p=dropout)
 
         elif self.base == "ViT":
             # self.inc_base = ViTModel.from_pretrained('google/vit-base-patch16-224-in21k',
@@ -28,18 +30,24 @@ class ImageEncoder(nn.Module):
         elif self.base == "effnet_b4":
             model = timm.create_model('tf_efficientnet_b4', pretrained=True)
             self.inc_base = nn.Sequential(*list(model.children())[:-1])
-            self.set_dropout(self.inc_base, p=0.25)
+            if freeze_base:
+                self.freeze_base()
+            self.set_dropout(self.inc_base, p=dropout)
 
         elif self.base == "resnet50":
             resnet50 = timm.create_model('resnet50', pretrained=True)
             self.inc_base = nn.Sequential(*list(resnet50.children())[:-1])
-            self.set_dropout(self.inc_base, p=0.25)
+            if freeze_base:
+                self.freeze_base()
+            self.set_dropout(self.inc_base, p=dropout)
         
 
         elif self.base == "convnext":
             convnext_base = timm.create_model('convnext_base', pretrained=True)
             self.inc_base = nn.Sequential(*list(convnext_base.children())[:-1])
-            self.set_dropout(self.inc_base, p=0.25)
+            if freeze_base:
+                self.freeze_base()
+            self.set_dropout(self.inc_base, p=dropout)
 
         elif self.base == "google":
             model = torch.hub.load('NVIDIA/DeepLearningExamples:torchhub', 'nvidia_efficientnet_b4', pretrained=True)
@@ -49,6 +57,10 @@ class ImageEncoder(nn.Module):
         elif self.base =='densenet':
             densenet = timm.create_model('densenet201', pretrained=True)
             self.inc_base = nn.Sequential(*list(densenet.children())[:-1])
+            if freeze_base:
+                self.freeze_base()
+            self.set_dropout(self.inc_base, p=dropout)
+
         
         else:
             self.conv1 = nn.Conv2d(3, 64, kernel_size=3, padding=1)
@@ -64,6 +76,10 @@ class ImageEncoder(nn.Module):
             if isinstance(module, nn.Dropout):
                 module.p = p
 
+    def freeze_base(self):
+        for param in self.inc_base.parameters():
+            param.requires_grad = False            
+        
     def forward(self, x):
 
         if self.base == 'ViT':

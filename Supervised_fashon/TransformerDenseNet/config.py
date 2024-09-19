@@ -4,9 +4,10 @@ num_sites = 11
 embedding_dim = 1920
 learning_rate = 0.0001
 num_epochs = 40
-l2 = 0.01
+l2 = 0
 batch_size = 32
 gamma = 1
+dropout = 0.1
 
 sche_milestones = [10, 20, 30, 40, 42, 43, 44, 45, 46, 47, 48, 49]
 
